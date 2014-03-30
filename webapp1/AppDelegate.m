@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WebViewController.h"
 
 @implementation AppDelegate
 
@@ -14,6 +15,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+
+    WebViewController *wbc = [WebViewController new];
+    wbc.address = @"https://bbc.co.uk";
+
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:wbc];
+    self.window.rootViewController = nc;
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

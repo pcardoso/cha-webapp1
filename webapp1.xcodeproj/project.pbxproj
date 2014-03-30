@@ -19,6 +19,7 @@
 		EB14C9EC18E71AE400ADB09F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB14C9D418E71AE400ADB09F /* UIKit.framework */; };
 		EB14C9F418E71AE400ADB09F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB14C9F218E71AE400ADB09F /* InfoPlist.strings */; };
 		EB14C9F618E71AE400ADB09F /* webapp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB14C9F518E71AE400ADB09F /* webapp1Tests.m */; };
+		EB14CA0118E7225000ADB09F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB14CA0018E7225000ADB09F /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		EB14C9F118E71AE400ADB09F /* webapp1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "webapp1Tests-Info.plist"; sourceTree = "<group>"; };
 		EB14C9F318E71AE400ADB09F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB14C9F518E71AE400ADB09F /* webapp1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = webapp1Tests.m; sourceTree = "<group>"; };
+		EB14C9FF18E7225000ADB09F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		EB14CA0018E7225000ADB09F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				EB14C9DF18E71AE400ADB09F /* AppDelegate.h */,
 				EB14C9E018E71AE400ADB09F /* AppDelegate.m */,
+				EB14C9FF18E7225000ADB09F /* WebViewController.h */,
+				EB14CA0018E7225000ADB09F /* WebViewController.m */,
 				EB14C9E218E71AE400ADB09F /* Images.xcassets */,
 				EB14C9D718E71AE400ADB09F /* Supporting Files */,
 			);
@@ -240,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB14C9E118E71AE400ADB09F /* AppDelegate.m in Sources */,
+				EB14CA0118E7225000ADB09F /* WebViewController.m in Sources */,
 				EB14C9DD18E71AE400ADB09F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

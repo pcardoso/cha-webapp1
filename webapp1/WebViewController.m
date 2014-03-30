@@ -19,6 +19,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.webView = [UIWebView new];
+        self.webView.frame = self.view.frame;
+        self.webView.delegate = self;
+        [self.view addSubview:self.webView];
     }
     return self;
 }
@@ -27,6 +31,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    NSURL *url = [NSURL URLWithString:self.address];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +59,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        WebViewController *vc = [WebViewController new];
+        vc.address = request.URL.absoluteString;
+        [self.navigationController pushViewController:vc animated:YES];
+        return NO;
+    }
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+
+    NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
+//    self.navigationItem.title = title;
+}
 
 @end
