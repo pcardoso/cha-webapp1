@@ -81,7 +81,7 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
     NSString* title = [webView stringByEvaluatingJavaScriptFromString: @"document.title"];
-//    self.navigationItem.title = title;
+    self.navigationItem.title = title;
 }
 
 @end
